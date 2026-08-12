@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brand proposal — two directions (S0, throwaway)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #0e0d0c;
+    color: #e8e4dc;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  body {
+    padding: 2rem 1.25rem 6rem;
+  }
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  header.page-head {
+    max-width: 68ch;
+    margin: 0 auto 3rem;
+  }
+  header.page-head h1 {
+    font-size: 1.6rem;
+    margin: 0 0 0.5rem;
+  }
+  header.page-head p {
+    color: #b8b2a6;
+    line-height: 1.5;
+  }
+  header.page-head .flag {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid #4a4438;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #d9a441;
+  }
+
+  section.direction {
+    margin: 0 auto 4rem;
+  }
+  section.direction > h2 {
+    font-size: 1.3rem;
+    margin: 0 0 0.25rem;
+  }
+  section.direction > .subtitle {
+    color: #9a9488;
+    margin: 0 0 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .panel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .panel {
+    background: var(--bg0);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .panel .mode-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .wordmark {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 2.3rem;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    margin: 0;
+  }
+  .wordmark-caption {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0.2rem 0 1.5rem;
+    font-style: italic;
+  }
+
+  .panel h1.specimen {
+    font-size: 1.55rem;
+    line-height: 1.25;
+    margin: 0 0 0.6rem;
+    color: var(--text);
+  }
+  .panel p.lead {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--text2);
+    margin: 0 0 1.5rem;
+    max-width: 46ch;
+  }
+
+  .controls-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+  .panel a.link-specimen {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 0.95rem;
+  }
+  .panel button.btn-specimen {
+    background: var(--accent);
+    color: var(--button-label);
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: default;
+  }
+
+  .status-box {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-dim);
+    color: var(--text);
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+
+  table.data-specimen {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  table.data-specimen caption {
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin-bottom: 0.4rem;
+  }
+  table.data-specimen th,
+  table.data-specimen td {
+    text-align: left;
+    padding: 0.45rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  table.data-specimen th {
+    color: var(--text2);
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  table.data-specimen tr.note-row td {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-style: italic;
+    border-bottom: none;
+    padding-top: 0.6rem;
+  }
+
+  .contrast-readout {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--text2);
+  }
+  .contrast-readout .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.15rem 0;
+  }
+  .contrast-readout .pair {
+    color: var(--text2);
+  }
+  .contrast-readout .val {
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .contrast-readout .pass { color: var(--good); }
+  .contrast-readout .fail { color: var(--error); }
+
+  /* Amber tokens */
+  .amber-dark {
+    --bg0: #141210; --bg1: #1C1916; --bg2: #262220; --border: #3A342E;
+    --text: #EDE7DC; --text2: #A89F92; --muted: #7D766C;
+    --accent: #D9A441; --good: #8FBF6F; --error: #D96A55;
+    --accent-dim: rgba(217, 164, 65, 0.12);
+    --button-label: #141210;
+  }
+  .amber-light {
+    --bg0: #F8F5EF; --bg1: #FFFDF8; --bg2: #F1ECE2; --border: #DCD3C2;
+    --text: #241F1A; --text2: #5D574E; --muted: #8A8276;
+    --accent: #8A5F14; --good: #3E7220; --error: #A93B2C;
+    --accent-dim: rgba(138, 95, 20, 0.10);
+    --button-label: #FFFFFF;
+  }
+
+  /* Vetiver tokens */
+  .vetiver-dark {
+    --bg0: #131513; --bg1: #1A1D1A; --bg2: #232723; --border: #333A33;
+    --text: #EAE8DF; --text2: #A0A396; --muted: #767A6E;
+    --accent: #A3B86C; --good: #8FBF6F; --error: #D96A55;
+    --accent-dim: rgba(163, 184, 108, 0.12);
+    --button-label: #131513;
+  }
+  .vetiver-light {
+    --bg0: #F4F5EF; --bg1: #FCFDF8; --bg2: #ECEEE5; --border: #D6D9CB;
+    --text: #1E211C; --text2: #565B50; --muted: #83887A;
+    --accent: #55702A; --good: #3E7220; --error: #A93B2C;
+    --accent-dim: rgba(85, 112, 42, 0.10);
+    --button-label: #FFFFFF;
+  }
+
+  footer.page-foot {
+    max-width: 68ch;
+    margin: 3rem auto 0;
+    color: #8a8478;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  footer.page-foot code {
+    background: #1c1a17;
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 480px) {
+    .panel { padding: 1.25rem; }
+    .wordmark { font-size: 1.9rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header class="page-head">
+    <h1>Brand proposal — two directions</h1>
+    <p>
+      Throwaway comparison page (task S0) for choosing a visual direction for the
+      fragrance price-tracking content site. Each direction is shown as a hard-coded
+      dark panel and a hard-coded light panel, side by side, so both render regardless
+      of your OS color scheme. Contrast ratios for the required token pairs are
+      computed live below each panel by the inline script at the bottom of this file.
+    </p>
+    <span class="flag">Site name not yet decided — wordmark reads "SITENAME" as a placeholder</span>
+  </header>
+
+  <section class="direction" id="direction-amber">
+    <h2>Direction A — Amber</h2>
+    <p class="subtitle">Warm near-black. Accent is a muted gold.</p>
+    <div class="panel-grid">
+
+      <div class="panel amber-dark" data-mode="dark" data-direction="Amber">
+        <div class="mode-label">Amber — Dark</div>
+
+        <p class="wordmark">SITENAME</p>
+        <p class="wordmark-caption">placeholder — name undecided</p>
+
+        <h1 class="specimen">A fragrance deal is a claim. Claims need evidence.</h1>
+        <p class="lead">Discount sites advertise 60–80% off nearly everything, nearly always. Against a retail price nobody charges, that figure cannot be false — or useful.</p>
+
+        <div class="controls-row">
+          <a class="link-specimen" href="#">View methodology</a>
+          <button class="btn-specimen" type="button">Track this fragrance</button>
+        </div>
+
+        <div class="status-box">Collection has not started.</div>
+
+        <table class="data-specimen">
+          <caption>Sample price record</caption>
+          <thead>
+            <tr><th>Source</th><th>Price</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Retailer A</td><td>$219</td></tr>
+            <tr><td>Retailer B</td><td>$260</td></tr>
+            <tr><td>Pooled median</td><td>~$240</td></tr>
+            <tr class="note-row"><td colspan="2">Averaging retailers' list prices manufactures a number nobody charges — why pooling misleads.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="contrast-readout" data-panel="amber-dark"></div>
+      </div>
+
+      <div class="panel amber-light" data-mode="light" data-direction="Amber">
+        <div class="mode-label">Amber — Light</div>
+
+        <p class="wordmark">SITENAME</p>
+        <p class="wordmark-caption">placeholder — name undecided</p>
+
+        <h1 class="specimen">A fragrance deal is a claim. Claims need evidence.</h1>
+        <p class="lead">Discount sites advertise 60–80% off nearly everything, nearly always. Against a retail price nobody charges, that figure cannot be false — or useful.</p>
+
+        <div class="controls-row">
+          <a class="link-specimen" href="#">View methodology</a>
+          <button class="btn-specimen" type="button">Track this fragrance</button>
+        </div>
+
+        <div class="status-box">Collection has not started.</div>
+
+        <table class="data-specimen">
+          <caption>Sample price record</caption>
+          <thead>
+            <tr><th>Source</th><th>Price</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Retailer A</td><td>$219</td></tr>
+            <tr><td>Retailer B</td><td>$260</td></tr>
+            <tr><td>Pooled median</td><td>~$240</td></tr>
+            <tr class="note-row"><td colspan="2">Averaging retailers' list prices manufactures a number nobody charges — why pooling misleads.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="contrast-readout" data-panel="amber-light"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="direction" id="direction-vetiver">
+    <h2>Direction B — Vetiver</h2>
+    <p class="subtitle">Cool-neutral charcoal with a green cast. Accent is a muted olive.</p>
+    <div class="panel-grid">
+
+      <div class="panel vetiver-dark" data-mode="dark" data-direction="Vetiver">
+        <div class="mode-label">Vetiver — Dark</div>
+
+        <p class="wordmark">SITENAME</p>
+        <p class="wordmark-caption">placeholder — name undecided</p>
+
+        <h1 class="specimen">A fragrance deal is a claim. Claims need evidence.</h1>
+        <p class="lead">Discount sites advertise 60–80% off nearly everything, nearly always. Against a retail price nobody charges, that figure cannot be false — or useful.</p>
+
+        <div class="controls-row">
+          <a class="link-specimen" href="#">View methodology</a>
+          <button class="btn-specimen" type="button">Track this fragrance</button>
+        </div>
+
+        <div class="status-box">Collection has not started.</div>
+
+        <table class="data-specimen">
+          <caption>Sample price record</caption>
+          <thead>
+            <tr><th>Source</th><th>Price</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Retailer A</td><td>$219</td></tr>
+            <tr><td>Retailer B</td><td>$260</td></tr>
+            <tr><td>Pooled median</td><td>~$240</td></tr>
+            <tr class="note-row"><td colspan="2">Averaging retailers' list prices manufactures a number nobody charges — why pooling misleads.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="contrast-readout" data-panel="vetiver-dark"></div>
+      </div>
+
+      <div class="panel vetiver-light" data-mode="light" data-direction="Vetiver">
+        <div class="mode-label">Vetiver — Light</div>
+
+        <p class="wordmark">SITENAME</p>
+        <p class="wordmark-caption">placeholder — name undecided</p>
+
+        <h1 class="specimen">A fragrance deal is a claim. Claims need evidence.</h1>
+        <p class="lead">Discount sites advertise 60–80% off nearly everything, nearly always. Against a retail price nobody charges, that figure cannot be false — or useful.</p>
+
+        <div class="controls-row">
+          <a class="link-specimen" href="#">View methodology</a>
+          <button class="btn-specimen" type="button">Track this fragrance</button>
+        </div>
+
+        <div class="status-box">Collection has not started.</div>
+
+        <table class="data-specimen">
+          <caption>Sample price record</caption>
+          <thead>
+            <tr><th>Source</th><th>Price</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Retailer A</td><td>$219</td></tr>
+            <tr><td>Retailer B</td><td>$260</td></tr>
+            <tr><td>Pooled median</td><td>~$240</td></tr>
+            <tr class="note-row"><td colspan="2">Averaging retailers' list prices manufactures a number nobody charges — why pooling misleads.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="contrast-readout" data-panel="vetiver-light"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="page-foot">
+    <p>
+      Token adjustment log: none. All four computed body-text pairs (text/bg0,
+      text2/bg1) already cleared 4.5:1 in both directions and both modes at the
+      values given in the brief. The one token decision made on top of the brief's
+      literal token list was the button-label color, which is not a fixed hex in
+      the brief — <code>--button-label</code> is set to the panel's own near-black
+      <code>bg0</code> in dark mode and to white in light mode, since accent-on-white
+      and accent-on-black text failed 4.5:1 in the wrong pairing (white label on the
+      dark-mode accent measured well under 4.5:1). See the live readout under each
+      panel for the exact ratios used to pick that pairing.
+    </p>
+  </footer>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  function parseRgb(str) {
+    var m = str.match(/rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)/);
+    if (!m) return [0, 0, 0];
+    return [parseFloat(m[1]), parseFloat(m[2]), parseFloat(m[3])];
+  }
+
+  function channel(c) {
+    c = c / 255;
+    return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  function relLuminance(rgb) {
+    var r = channel(rgb[0]), g = channel(rgb[1]), b = channel(rgb[2]);
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  }
+
+  function contrastRatio(rgbA, rgbB) {
+    var lA = relLuminance(rgbA);
+    var lB = relLuminance(rgbB);
+    var hi = Math.max(lA, lB);
+    var lo = Math.min(lA, lB);
+    return (hi + 0.05) / (lo + 0.05);
+  }
+
+  function cssVar(el, name) {
+    return getComputedStyle(el).getPropertyValue(name).trim();
+  }
+
+  function toRgb(colorStr) {
+    // colorStr may already be "#rrggbb" or "rgb(...)" — normalize via a probe element
+    var probe = document.createElement('span');
+    probe.style.color = colorStr;
+    probe.style.display = 'none';
+    document.body.appendChild(probe);
+    var computed = getComputedStyle(probe).color;
+    document.body.removeChild(probe);
+    return parseRgb(computed);
+  }
+
+  function fmt(ratio) {
+    return ratio.toFixed(2) + ':1';
+  }
+
+  function verdict(ratio, opts) {
+    opts = opts || {};
+    var normalPass = ratio >= 4.5;
+    var largePass = ratio >= 3.0;
+    if (normalPass) return { label: 'PASS 4.5:1', cls: 'pass' };
+    if (largePass) return { label: 'PASS 3:1 (large text only)', cls: 'pass' };
+    return { label: 'FAIL', cls: 'fail' };
+  }
+
+  var results = [];
+
+  document.querySelectorAll('.panel').forEach(function (panel) {
+    var mode = panel.dataset.mode;
+    var direction = panel.dataset.direction;
+    var name = panel.dataset.panel || (direction + '-' + mode);
+
+    var bg0 = cssVar(panel, '--bg0');
+    var bg1 = cssVar(panel, '--bg1');
+    var text = cssVar(panel, '--text');
+    var text2 = cssVar(panel, '--text2');
+    var accent = cssVar(panel, '--accent');
+
+    var btn = panel.querySelector('.btn-specimen');
+    var btnStyle = getComputedStyle(btn);
+    var buttonBg = parseRgb(btnStyle.backgroundColor);
+    var buttonLabel = parseRgb(btnStyle.color);
+
+    var pairs = [
+      { label: 'text / bg0', a: toRgb(text), b: toRgb(bg0) },
+      { label: 'text2 / bg1', a: toRgb(text2), b: toRgb(bg1) },
+      { label: 'accent / ' + (mode === 'dark' ? 'bg0' : 'bg1'), a: toRgb(accent), b: toRgb(mode === 'dark' ? bg0 : bg1) },
+      { label: 'button-label / accent', a: buttonLabel, b: buttonBg }
+    ];
+
+    var readout = panel.querySelector('.contrast-readout');
+    var html = '';
+    pairs.forEach(function (pair) {
+      var ratio = contrastRatio(pair.a, pair.b);
+      var v = verdict(ratio);
+      html += '<div class="row"><span class="pair">' + pair.label + '</span>' +
+        '<span class="val ' + v.cls + '">' + fmt(ratio) + ' — ' + v.label + '</span></div>';
+      results.push({
+        panel: name,
+        pair: pair.label,
+        ratio: Number(ratio.toFixed(2)),
+        verdict: v.label
+      });
+    });
+    readout.innerHTML = html;
+  });
+
+  // Surface the full computed table for verification (no external requests, just console).
+  console.log('Contrast audit results:', results);
+  window.__contrastResults = results;
+})();
+</script>
+</body>
+</html>

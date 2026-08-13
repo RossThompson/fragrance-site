@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology — what we will count as evidence — PriceOnRecord</title>
+<meta name="description" content="How PriceOnRecord will build fragrance price baselines: daily recorded prices, per-retailer medians, and a standard that refuses list prices and unverifiable superlatives.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="shell"><nav>
+  <a class="wordmark" href="index.html">PriceOnRecord</a>
+  <a href="how-discounting-works.html">How discounting works</a>
+  <a href="methodology.html" aria-current="page">Methodology</a>
+  <a href="about.html">About</a>
+</nav></div></header>
+<main id="main">
+
+<h1>Methodology: what we will count as evidence</h1>
+<p class="lead">Every rule below exists to prevent one specific way of being wrong, and each is stated here alongside the mistake it prevents.</p>
+
+<h2>1. What gets recorded</h2>
+<p>The subject of the record is a hand-curated watchlist of a few hundred fragrances, not a retailer's full catalogue. That is a deliberate limit. A feed of everything is a feed of nothing: a list long enough to include every product is a list nobody reads, and a system that flags anything anywhere will always find something to flag.</p>
+<p>For each product on that list, once a day, at each retailer where it is carried, two things are written down: the price and the stock status. That is the entire raw record. Everything else on this page is arithmetic performed on those two columns.</p>
+<p>The record is append-only. <strong>Recorded observations are never edited and never deleted. A history you can tidy up afterwards is not evidence; it is marketing with a memory.</strong> If a price was wrong when it was recorded, the correction is a later row, not a rewritten one.</p>
+
+<h2>2. The baseline</h2>
+<p>The typical price for a product is the <strong>median of its daily in-stock prices at one retailer over the last 90 days</strong>. The median rather than the average, because a single mis-fed number cannot drag a median far, and a run of them is the thing we would want to see anyway.</p>
+<p>Four rules govern how that number is built. Each one is here because the obvious alternative produces a specific false claim.</p>
+
+<p><strong>Per retailer, never pooled.</strong> A product's typical price is computed separately for every retailer that carries it. Prices from different retailers are never combined into one baseline. Consider two sellers, each with a flat, unchanging everyday price:</p>
+<table>
+  <thead>
+    <tr><th scope="col">Source</th><th scope="col">Price</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Retailer A, steady everyday price</td><td class="num">$219</td></tr>
+    <tr><td>Retailer B, steady everyday price</td><td class="num">$260</td></tr>
+    <tr><td>Pooled "typical price"</td><td class="num">~$240</td></tr>
+  </tbody>
+</table>
+<p>Neither price has moved. Nothing has been discounted. But pooling makes Retailer A's ordinary Tuesday price look like a permanent 9% discount, while Retailer B can never qualify at all no matter what it does — it could run the deepest genuine sale of the year and still sit above a baseline inflated by its own listing.</p>
+<p>We made exactly this mistake in an early design of our own system. Finding it — and needing to find it — is why this page exists: a method you have not written down is a method you cannot check.</p>
+
+<p><strong>In stock only.</strong> Out-of-stock listings are excluded from the baseline. A listing that cannot be bought often carries a stale placeholder price — the last price it held, or a default the retailer never revisits, or a figure left over from a previous run of stock. Letting those rows vote corrupts the median in directions that cannot be predicted: sometimes upward, sometimes downward, always without a buyer behind it. A price nobody could have paid is not a price.</p>
+
+<p><strong>One price per day — the day's minimum.</strong> Where a retailer carries several listings of the same product, one value per day enters the record: the lowest of them. Without that rule, a product listed six ways contributes six times as much to its own baseline as a product listed once, and the shape of a retailer's catalogue starts to outvote the calendar. The baseline is meant to be a record of days, not a record of listings.</p>
+
+<p><strong>Today is excluded from its own baseline.</strong> The 90-day window that a candidate price is judged against ends yesterday. If today were included, a large drop would partly drag down the very reference it is being measured against, and the deeper the discount the more it would erase its own evidence. The comparison has to be against a past the current price did not help write.</p>
+
+<h2>3. What will qualify</h2>
+<p>Two paths, and a price must clear one of them completely. The exact constants are not published here, and that is deliberate: they are tunable, and a published threshold is an invitation to price just under it.</p>
+<ul>
+  <li><strong>Meaningfully below the typical price.</strong> The price must sit below that product's 90-day typical price at that retailer by both a percentage and a dollar floor. Both, because a percentage alone rewards cheap bottles for nothing — 20% off an inexpensive bottle is pocket change, and pocket change is not news. There must also be at least three weeks of recorded history behind the product before any such claim is allowed.</li>
+  <li><strong>The lowest price ever recorded here.</strong> Lower than every price we have recorded for that product at that retailer. This path requires a substantially longer record before it can fire at all, because in the first weeks of collection almost every price is trivially "the lowest ever recorded" — the superlative is true and worthless at the same time.</li>
+</ul>
+<p>Two further constraints apply to everything that qualifies. The same product will not be flagged again within three weeks, so a slow drift downward cannot be posted as a series of separate events. And every candidate is re-checked live immediately before posting; if the price or the stock status no longer holds, the candidate is dropped silently rather than posted with a caveat.</p>
+
+<h2>4. What is refused as evidence</h2>
+<ul>
+  <li>Retailer-supplied discount percentages.</li>
+  <li>MSRP, list, or "compare at" figures.</li>
+  <li>Any month or superlative the recorded history does not cover.</li>
+</ul>
+<p>The third is the one that costs something. On day 34 of collection, the strongest honest claim is "the lowest price in the 34 days we've tracked" — so that is the claim that will be made. The posting software cannot name a month it has not seen; the copy is generated from the record, not written around it.</p>
+
+<h2>5. Status</h2>
+<div class="status">
+<strong>Zero observations recorded.</strong>
+<p>Nothing on this page describes something that has happened. Prices will come only from official retailer product feeds, and feed access is pending publisher approval. Every behaviour above is written in the future tense because none of it has run against real data yet.</p>
+<span class="r-label">status as of August 12, 2026</span>
+</div>
+<p>There is no scraping fallback and there will not be one. The retailers gate automated access to their listings, and working around that gate is off the table — a price record built by ignoring the terms it was collected under is not a foundation anything trustworthy can be built on.</p>
+
+<h2>6. The conflict</h2>
+<p>Commission rates differ by retailer, so when the same product qualifies at two retailers at similar prices, the link will go to the one that pays more. What that cannot influence is qualification itself: whether a price clears the bar is decided by the recorded price history alone, which contains no commission data and never sees any.</p>
+<p>The full disclosure — who runs this, how it is paid, and what that means for the reader — is on the <a href="about.html">about page</a>.</p>
+
+</main>
+<footer><div class="shell">
+  <p>PriceOnRecord participates in affiliate programs; when links exist, they are disclosed on the page that carries them. There are none yet. <a href="about.html">Disclosure &amp; contact</a>.</p>
+</div></footer>
+</body>
+</html>

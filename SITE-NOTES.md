@@ -31,6 +31,13 @@ below: a fetched source (URL + fetch date) or an R label (reasoning, written as 
 | testers/unboxed cheaper, distinct products | how-discounting-works | R |
 | batch codes: production date, not authenticity | how-discounting-works | R |
 | affiliate cookies: reader price unchanged, commission earned, windows vary | how-discounting-works | R — program-specific figures deliberately omitted as unverified |
+| watchlist/daily/append-only recording design | methodology | internal — bot pipeline (private repo), described accurately |
+| four baseline rules + reasons | methodology | internal — bot pipeline; each rule exists in tested code |
+| pooled-median worked example ($219/$260/~$240) | methodology | arithmetic; mirrors a real bug found and fixed in our design |
+| two qualifying paths, qualitative | methodology | internal — bot pipeline; constants withheld deliberately |
+| history-bounded claims ("N days we've tracked") | methodology | internal — the copy generator derives claims from the record |
+| zero observations, feed-only sourcing | methodology | fact, dated 2026-08-12 |
+| commission conflict + qualification blind to it | methodology | internal — link selection vs qualification are separate stages |
 
 ## Verification
 (filled by S6)

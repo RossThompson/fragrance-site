@@ -21,6 +21,10 @@ below: a fetched source (URL + fetch date) or an R label (reasoning, written as 
 ## Claim → basis
 | Claim | Page | Basis |
 |---|---|---|
+| "60–80% off nearly everything, nearly always" | index | R — characterisation of the discounter category, checkable by inspecting any major discount site's listing grid; written as characterisation |
+| "a retail price almost nobody charges" | index | R — reasoning about list-price economics; written as reasoning |
+| the two qualifying paths + 90-day/3-week framing | index | internal — bot spec §7 (private repo); described qualitatively by design |
+| "collection has not started" + feed-only sourcing | index | fact, dated 2026-08-12 |
 
 ## Verification
 (filled by S6)

@@ -83,20 +83,21 @@ with a throwaway Python script (deleted after use). All ratios:
 | text/bg1 | 14.22:1 | 16.06:1 |
 | text2/bg0 | 7.15:1 | 6.57:1 |
 | text2/bg1 | 6.70:1 | 7.03:1 |
-| muted/bg1 (footer) | **3.90:1** | **4.19:1** |
+| muted/bg1 (footer) | 4.66:1 | 4.97:1 |
+| muted/bg0 | 4.98:1 | 4.65:1 |
 | accent/bg0 | 8.31:1 | 5.18:1 |
 | accent/bg1 | 7.78:1 | 5.54:1 |
 | btn-label/accent | 8.31:1 | 5.63:1 |
 
-All body-text pairs (text/bg0, text/bg1, text2/bg0, text2/bg1) clear 4.5:1 in both modes.
-**Flag: `muted` (footer fine print and the small `.r-label` status tags) sits between 3:1 and
-4.5:1 in both modes — 3.90:1 dark, 4.19:1 light.** It clears the 3:1 large-text floor but not
-the 4.5:1 body-text floor, and the footer/`.r-label` text is small (0.9rem / 0.8rem), so this
-is a real AA gap for that token, not a false alarm. Per the S6 spec this is flagged rather
-than silently fixed since it's above 3:1; a follow-up should darken/lighten `--muted` a few
-points (e.g. dark `#7D766C` → `#8D877D`-ish, light `#807A6F` → `#6E695F`-ish) to clear 4.5:1
-before this copy is treated as load-bearing for accessibility compliance. This corrects the
-S0 note's claim that "all 16 token pairs pass AA" — one does not, currently.
+All pairs, including `muted`, clear 4.5:1 in both modes.
+
+History of the `muted` token: the S6 sweep on 2026-08-12 found it at 3.90:1 dark / 4.19:1
+light — above the 3:1 large-text floor but below the 4.5:1 body-text floor, and the
+footer/`.r-label` text it colors is small (0.9rem / 0.8rem), so it was a real AA gap. This
+also contradicted the S0 note's "all 16 token pairs pass AA", which had not audited `muted`
+against `bg1`. Fixed 2026-08-13: dark `#7D766C` → `#8A8377`, light `#807A6F` → `#746E63`,
+chosen as the smallest shift clearing 4.5:1 against both backgrounds (ratios above,
+recomputed after the change).
 
 **Link check** — every internal `href` across the four pages (nav links, in-body cross-links,
 `assets/favicon.svg`, `assets/site.css`, `#main` skip-link target) resolves to an existing

@@ -25,6 +25,12 @@ below: a fetched source (URL + fetch date) or an R label (reasoning, written as 
 | "a retail price almost nobody charges" | index | R — reasoning about list-price economics; written as reasoning |
 | the two qualifying paths + 90-day/3-week framing | index | internal — bot spec §7 (private repo); described qualitatively by design |
 | "collection has not started" + feed-only sourcing | index | fact, dated 2026-08-12 |
+| list prices function as anchors, rarely charged | how-discounting-works | R — reasoning about reference pricing; written as reasoning |
+| permanent-sale effect | how-discounting-works | R — conditional reasoning ("if nearly every listing…") |
+| grey market: real savings, traded warranty/recourse | how-discounting-works | R — hedged; general knowledge of parallel-import trade-offs, no specific brand policy cited |
+| testers/unboxed cheaper, distinct products | how-discounting-works | R |
+| batch codes: production date, not authenticity | how-discounting-works | R |
+| affiliate cookies: reader price unchanged, commission earned, windows vary | how-discounting-works | R — program-specific figures deliberately omitted as unverified |
 
 ## Verification
 (filled by S6)

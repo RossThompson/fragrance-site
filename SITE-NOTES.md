@@ -38,6 +38,10 @@ below: a fetched source (URL + fetch date) or an R label (reasoning, written as 
 | history-bounded claims ("N days we've tracked") | methodology | internal — the copy generator derives claims from the record |
 | zero observations, feed-only sourcing | methodology | fact, dated 2026-08-12 |
 | commission conflict + qualification blind to it | methodology | internal — link selection vs qualification are separate stages |
+| affiliate disclosure wording + FTC citation | about | FTC's Endorsement Guides: What People Are Asking — https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking — WebFetch tool returned HTTP 403 on first attempt; confirmed live via curl (HTTP 200, title verified) 2026-08-12 |
+| commission conflict statement | about | internal — link selection vs qualification are separate pipeline stages |
+| "no scent reviews" and the reason | about | fact — this project has no sensory apparatus; stated as such |
+| named operation, contact address | about | fact — S0 gate decision |
 
 ## Verification
 (filled by S6)
